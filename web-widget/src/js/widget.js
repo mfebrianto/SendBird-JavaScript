@@ -1039,4 +1039,6 @@ class SBWidget {
   }
 }
 
-window.sbWidget = new SBWidget();
+var sbWidget = new SBWidget();
+window.sbWidget = sbWidget;
+export default sbWidget;

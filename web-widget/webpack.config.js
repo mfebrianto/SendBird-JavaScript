@@ -7,7 +7,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname + '/dist'),
     filename: '[name].SendBird.js',
-    publicPath: "dist"
+    publicPath: "dist",
+    library: 'SendBirdWidget',
+    libraryTarget: 'umd'
   },
   devtool: "cheap-eval-source-map",
   devServer: {
