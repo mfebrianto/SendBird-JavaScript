@@ -149,9 +149,14 @@ class SBWidget {
   }
 
   responsiveChatSection(channelUrl, isShow) {
+    console.log(">>>>>>>>responsiveChatSection")
     let _bodyWidth = document.getElementsByTagName("BODY")[0].offsetWidth - 360;
+    console.log(">>>>>>>>_bodyWidth"+document.getElementsByTagName("BODY")[0].offsetWidth)
     let maxSize = parseInt(_bodyWidth / CHAT_BOARD_WIDTH);
+    console.log(">>>>>>>>maxSize"+maxSize)
     let currentSize = this.activeChannelSetList.length;
+    console.log(">>>>>>>>currentSize "+maxSize)
+    
     if (currentSize >= maxSize) {
       let extraChannelSet = getLastItem(this.activeChannelSetList);
       if (extraChannelSet) {
@@ -247,15 +252,18 @@ class SBWidget {
       hide(chatBoard.inviteBtn);
     });
 
-    this.listBoard.addMinimizeClickEvent(() => {
+    this.closeChannelList = () => {
+      console.log(">>>>>minimise")
       this.listBoard.hideLogoutBtn();
       this.closePopup();
       this.toggleBoard(false);
       this.chatSection.responsiveSize(
         true,
         this.responsiveChatSection.bind(this)
-      );
-    });
+      )
+    }
+
+    this.listBoard.addMinimizeClickEvent(this.closeChannelList);
 
     this.listBoard.addLogoutClickEvent(() => {
       this.sb.disconnect(() => {
@@ -560,6 +568,12 @@ class SBWidget {
       this.closePopup();
       let channelUrl = item.getAttribute("data-channel-url");
       let openChatBoard = this.chatSection.getChatBoard(channelUrl);
+      console.log(">>>>>>addChannelClickEvent")
+
+
+      this.closeChannelList()
+      console.log(">>>>>after click")
+
       if (!openChatBoard) {
         var newChat = this.chatSection.getChatBoard(NEW_CHAT_BOARD_ID);
         if (newChat) {

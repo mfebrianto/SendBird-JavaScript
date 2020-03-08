@@ -79,6 +79,7 @@ class ListBoard extends Element {
   }
 
   addMinimizeClickEvent(action) {
+    console.log(">>>>minimise")
     this._setClickEvent(this.btnMini, action);
   }
 
