@@ -62,7 +62,7 @@ class ListBoard extends Element {
     this.btnLogout.appendChild(logoutText);
 
     this.btnOption.appendChild(this.btnLogout);
-    boardTop.appendChild(this.btnOption);
+    // boardTop.appendChild(this.btnOption);
 
     this.addOptionClickEvent();
 
@@ -73,7 +73,7 @@ class ListBoard extends Element {
     this._setClass(newChatTooltip, [className.TOOLTIP]);
     this._setContent(newChatTooltip, NEW_CHAT_TOOLTIP_TEXT);
     this.btnNewChat.appendChild(newChatTooltip);
-    boardTop.appendChild(this.btnNewChat);
+    // boardTop.appendChild(this.btnNewChat);
 
     this.self.appendChild(boardTop);
   }

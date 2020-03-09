@@ -106,7 +106,7 @@ class ChatSection extends Element {
     this._setContent(tooltipLeave, TOOLTIP_CHANNEL_LEAVE);
 
     topBtnLeave.appendChild(tooltipLeave);
-    chatTop.appendChild(topBtnLeave);
+    // chatTop.appendChild(topBtnLeave);
 
     var topBtnMembers = this.createDiv();
     this._setClass(topBtnMembers, [className.BTN, className.IC_MEMBERS]);
@@ -128,7 +128,7 @@ class ChatSection extends Element {
     this._setContent(tooltipInvite, TOOLTIP_INVITE_MEMBER);
 
     topBtnInvite.appendChild(tooltipInvite);
-    chatTop.appendChild(topBtnInvite);
+    // chatTop.appendChild(topBtnInvite);
 
     chatBoard.appendChild(chatTop);
 
@@ -138,6 +138,7 @@ class ChatSection extends Element {
     chatBoard.appendChild(chatContent);
 
     isLast ? this.self.appendChild(chatBoard) : this.moveToFirstIndex(chatBoard);
+
     return chatBoard;
   }
 
