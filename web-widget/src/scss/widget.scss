@@ -553,7 +553,7 @@
       float: right;
       width: 280px;
       height: 426px;
-      margin-right: 20px;
+      margin-right: 0px;
       @include box-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
 
       .leave-popup {
@@ -1123,7 +1123,7 @@
         content: ' ';
         position: absolute;
         bottom: 100%;
-        left: 50%;
+        left: 68%;
         margin-left: -5px;
         border-width: 7px;
         border-style: solid;
